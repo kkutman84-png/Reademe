@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Доступ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .box {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background: #4caf50;
+      color: white;
+      font-size: 16px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="login">
+  <h2>Введите пароль</h2>
+  <input type="password" id="password" placeholder="Пароль">
+  <button onclick="check()">Войти</button>
+</div>
+
+<div class="box hidden" id="content">
+  <h2>Прочитайте инструкцию.</h2>
+  <p>Здесь будет ваш текст.</p>
+</div>
+
+<script>
+  function check() {
+    const pass = document.getElementById("password").value;
+    if (pass === "31102006") {
+      document.getElementById("login").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+    } else {
+      alert("Неверный пароль");
+    }
+  }
+</script>
+
+</body>
+</html>
